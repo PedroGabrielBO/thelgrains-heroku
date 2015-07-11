@@ -18,7 +18,7 @@ end
 
 gem 'passenger'
 # gem 'responders'
-gem 'activeadmin', github: 'activeadmin'
+# gem 'activeadmin', github: 'activeadmin'
 gem 'state_machine'
 gem 'devise'
 
