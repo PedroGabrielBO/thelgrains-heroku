@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente_id: 
+  servico_id: 
+  funcionario_id: 
+  data: 2015-05-05
+  finalizado: 
+
+two:
+  cliente_id: 
+  servico_id: 
+  funcionario_id: 
+  data: 2015-05-05
+  finalizado: 
