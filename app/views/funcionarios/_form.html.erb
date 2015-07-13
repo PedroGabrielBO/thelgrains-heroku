@@ -1,0 +1,64 @@
+<%= form_for(@funcionario) do |f| %>
+  <% if @funcionario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@funcionario.errors.count, "falha") %>:</h2>
+
+      <ul>
+      <% @funcionario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf, 'CPF' %><br>
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone_fixo %><br>
+    <%= f.telephone_field :telefone_fixo %><br>
+
+    <%= f.label :telefone_ramal, 'Ramal' %><br>
+    <%= f.telephone_field :telefone_ramal %><br>
+
+    <%= f.label :celular_1 %><br>
+    <%= f.telephone_field :celular_1 %><br>
+
+    <%= f.label :celular_2 %><br>
+    <%= f.telephone_field :celular_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco, 'Endereço' %><br>
+    <%= f.text_field :endereco %><br>
+
+    <%= f.label :endereco_numero, 'Número' %><br>
+    <%= f.number_field :endereco_numero %><br>
+
+    <%= f.label :endereco_complemento, 'Complemento' %><br>
+    <%= f.text_field :endereco_complemento %><br>
+
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep %>
+  </div>
+  <div class="field">
+    <%= f.label :password, 'Senha' %><br>
+    <%= f.password_field :password %><br>
+
+    <%= f.label :password_confirmation, 'Confirmação de senha' %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente_id_id: 
+  funcionario_id_id: 
+  servico: MyText
+  data: 2015-05-05 22:36:55
+
+two:
+  cliente_id_id: 
+  funcionario_id_id: 
+  servico: MyText
+  data: 2015-05-05 22:36:55

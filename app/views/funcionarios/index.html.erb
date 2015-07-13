@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Funcionarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Telefone Fixo</th>
+      <th>Email</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @funcionarios.each do |f| %>
+      <tr>
+        <td><%= f.nome %></td>
+        <td><%= f.cpf %></td>
+        <td><%= f.telefone_fixo %> <% if f.telefone_ramal? %>
+          | Ramal <%= f.telefone_ramal%>
+          <% end %></td>
+        <td><%= f.email %></td>
+
+        <td><%= link_to 'Show', f %></td>
+        <% if can? [:edit,:delete], Funcionario %>
+          <td><%= link_to 'Edit', edit_funcionario_path(f) %></td>
+          <td><%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Mah você está certo disto?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+<%= link_to 'New Funcionario', new_funcionario_path %>
+
+</table>
+
+<br>
+
+<%= link_to 'New Funcionario', new_funcionario_path %>

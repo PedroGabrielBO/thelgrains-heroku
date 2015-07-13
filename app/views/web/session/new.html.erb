@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+<% end %>
+<%= form_tag ({controller: 'web/session', action: 'create'}) do %>
+  Senha: <%= password_field_tag(:password) %><br>
+  <%= submit_tag 'Login' %>
+<%end%>
+<%= link_to 'Voltar', '/'%>
