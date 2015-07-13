@@ -3,14 +3,14 @@ class Admin::SessionController < AdminBaseController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
-  # if session[:id] == 'web' then redirect_to 'app#index' end
+    # if session[:id] == 'web' then redirect_to 'app#index' end
   end
 
   def create
     user = User.find_by_cpf(params[:cpf])
 
     if user && user.authenticate(params[:password])
-      if session[:id] == 'web' then session[:back_to_app] = 'true' end
+      session[:back_to_app] = 'true' if session[:id] == 'web'
       session[:id] = user.id
       flash.now[:notice] = 'Logado na Administração com sucesso!'
       redirect_to admin_app_path

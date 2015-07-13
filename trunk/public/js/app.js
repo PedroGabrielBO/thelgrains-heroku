@@ -67,7 +67,7 @@ jQuery(document).ready(function ($) {
     // Bind to scroll
     $(window).scroll(function () {
 
-        //Display or hide scroll to top button 
+        //Display or hide scroll to top button
         if ($(this).scrollTop() > 100) {
             $('.scrollup').fadeIn();
         } else {
@@ -231,25 +231,43 @@ Sand mail
 
         if (error == false) {
             var dataString = $('#contact-form').serialize(); // Collect data from form
-            $.ajax({
-                type: "POST",
-                url: $('#contact-form').attr('action'),
-                data: dataString,
-                timeout: 6000,
-                error: function (request, error) {
-
-                },
-                success: function (response) {
-                    response = $.parseJSON(response);
-                    if (response.success) {
-                        $('#successSend').show();
-                        $("#name").val('');
-                        $("#email").val('');
-                        $("#comment").val('');
-                    } else {
-                        $('#errorSend').show();
-                    }
-                }
+            // $.ajax({
+            //     type: "POST",
+            //     url: $('#contact-form').attr('action'),
+            //     data: dataString,
+            //     timeout: 6000,
+            //     error: function (request, error) {
+            //
+            //     },
+            //     success: function (response) {
+            //         response = $.parseJSON(response);
+            //         if (response.success) {
+            //             $('#successSend').show();
+            //             $("#name").val('');
+            //             $("#email").val('');
+            //             $("#comment").val('');
+            //         } else {
+            //             $('#errorSend').show();
+            //         }
+            //     }
+            // });
+            $.ajax(
+            {
+              type: "POST",
+              url: "/comentario",
+              data: dataString,
+              timeout: 6000,
+              success: function (response)
+              {
+                $('#successSend').show();
+                $("#name").val('');
+                $("#email").val('');
+                $("#comment").val('');
+              }
+              error: function(xhr)
+              {
+                $('#errorSend').show();
+              }
             });
             return false;
         }
@@ -294,8 +312,8 @@ Sand mail
     /************************
     Animate elements
     *************************/
-    
-    //Animate thumbnails 
+
+    //Animate thumbnails
     jQuery('.thumbnail').one('inview', function (event, visible) {
         if (visible == true) {
             jQuery(this).addClass("animated fadeInDown");
@@ -312,7 +330,7 @@ Sand mail
             jQuery(this).removeClass("animated fadeInDown");
         }
     });
-    
+
     //animate first team member
     jQuery('#first-person').bind('inview', function (event, visible) {
         if (visible == true) {
@@ -321,7 +339,7 @@ Sand mail
             jQuery('#first-person').removeClass("animated pulse");
         }
     });
-    
+
     //animate sectond team member
     jQuery('#second-person').bind('inview', function (event, visible) {
         if (visible == true) {
@@ -339,7 +357,7 @@ Sand mail
             jQuery('#third-person').removeClass("animated pulse");
         }
     });
-    
+
     //Animate price columns
     jQuery('.price-column, .testimonial').bind('inview', function (event, visible) {
         if (visible == true) {
@@ -348,7 +366,7 @@ Sand mail
             jQuery(this).removeClass("animated fadeInDown");
         }
     });
-    
+
     //Animate contact form
     jQuery('.contact-form').bind('inview', function (event, visible) {
         if (visible == true) {

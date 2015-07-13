@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
-
 gem 'cancancan'
 
 # gem 'brazilian-rails'
@@ -10,7 +8,7 @@ gem 'immigrant', group: :development
 gem 'foreigner', group: :development
 gem 'rails-erd', group: :development
 
-group :production do
+group :production, :test do
   gem 'rails_12factor'
   gem 'mysql2'
   gem 'pg'
@@ -18,7 +16,7 @@ end
 
 gem 'passenger'
 # gem 'responders'
-# gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 gem 'state_machine'
 gem 'devise'
 

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable
+  devise :database_authenticatable, :timeoutable, authentication_keys: [:cpf]
 
   has_one :funcionario, inverse_of: :user
   has_many :atendimentos
@@ -11,4 +11,13 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   validates_associated :funcionario
 
+  accepts_nested_attributes_for :funcionario, allow_destroy: true
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 end
