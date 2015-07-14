@@ -532,29 +532,29 @@
                                 <!-- TODO FAZER POST VIA AJAX
                                   http://stackoverflow.com/questions/23967390/rails-flash-notice-via-ajax
                                 -->
-                                <script type="text/javascript">
-                                  $( function() {
-                                    $("#contact-form").submit(function()
-                                    {
-                                      $.ajax(
-                                      {
-                                        type: "POST",
-                                        url: "/comentario/", // url 404 !!!
-                                        complete: function(data)
-                                        {
-                                          alert(notice);
-                                          //recarrega a pagina ou apaga dados do form
-                                          // variavel "notice" está (teoricamente) sendo setada pelo rails
-                                          // var notice = "<%= flash[:notice] %>"
-                                        },
-                                        error: function(xhr)
-                                        {
-                                          alert(xhr.status);
-                                        }
-                                      });
-                                      return false;
-                                    });
-                                  });
+                                <script type="text/javascript"> -->
+                                //   $( function() {
+                                //     $("#contact-form").submit(function()
+                                //     {
+                                //       $.ajax(
+                                //       {
+                                //         type: "POST",
+                                //         url: "/comentario/", // url 404 !!!
+                                //         complete: function(data)
+                                //         {
+                                //           alert(notice);
+                                //           //recarrega a pagina ou apaga dados do form
+                                //           // variavel "notice" está (teoricamente) sendo setada pelo rails
+                                //           // var notice = "<%= flash[:notice] %>"
+                                //         },
+                                //         error: function(xhr)
+                                //         {
+                                //           alert(xhr.status);
+                                //         }
+                                //       });
+                                //       return false;
+                                //     });
+                                //   });
                                 </script>
 
                                 <form id="contact-form">
@@ -614,6 +614,7 @@
         <!-- INÍCIO DO FOOTER -->
         <div class="footer">
             <p>&copy; 2015 Thelmar Project</p>
+            <p><a href="/login">Acesso ao sistema </a></p>
         </div>
         <!-- FIM DO FOOTER -->
         <!-- BOTÃO DE SCROLL UP -->

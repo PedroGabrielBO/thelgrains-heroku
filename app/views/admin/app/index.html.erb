@@ -1,2 +1,2 @@
 <h1> Administração </h1>
-<p><%= link_to 'Logout', admin_logout_path %> </p>
+<p><%= sign_out_and_redirect(current_user)  %> </p>
