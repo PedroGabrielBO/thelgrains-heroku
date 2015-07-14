@@ -10,11 +10,9 @@ gem 'immigrant', group: :development
 gem 'foreigner', group: :development
 gem 'rails-erd', group: :development
 
-group :production, :test do
-  gem 'rails_12factor'
-  gem 'mysql2'
-  gem 'pg'
-end
+gem 'rails_12factor'
+gem 'mysql2'
+gem 'pg'
 
 gem 'passenger'
 # gem 'responders'
