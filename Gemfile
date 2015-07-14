@@ -4,6 +4,8 @@ ruby '2.2.2'
 
 gem 'cancancan'
 
+gem 'puma'
+
 # gem 'brazilian-rails'
 
 gem 'immigrant', group: :development
