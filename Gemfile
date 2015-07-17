@@ -1,23 +1,20 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
-
 gem 'cancancan'
-
-gem 'puma'
 
 # gem 'brazilian-rails'
 
 gem 'immigrant', group: :development
 gem 'foreigner', group: :development
-gem 'rails-erd', group: :development
+gem 'rails-erd', group: :doc
 
 gem 'rails_12factor'
 gem 'mysql2'
 gem 'pg'
+gem 'puma'
 
 gem 'passenger'
-# gem 'responders'
+gem 'responders'
 gem 'activeadmin', github: 'activeadmin'
 gem 'state_machine'
 gem 'devise'
@@ -48,7 +45,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn', group: :development
+#gem 'unicorn', group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Eva Hair Fashion</title>
         <!-- Carregar possíveis fontes -->
-        <script src="js/jquery.js"></script>
+
         <!-- "Como é que baixa CSS?" É assim... -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
@@ -465,6 +465,7 @@
         <!-- Fim do "DIA DA NOIVA".Beatrix Kiddo está orgulhosa de nós! -->
         <div class="section secondary-section">
             <div class="triangle"></div>
+            </div>
         <!-- "Triângulo" divisor -->
         <!-- Possível entrada da clientela $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
 
@@ -499,10 +500,11 @@
                     <div class="span4 price-column">
                         <h3>Química</h3>
                         <ul class="list">
-                          <li class="price">Básico: R$9,99</li>
-                          <li><strong>Médio:</strong> R$22,99</li>
-                          <li><strong>Médio-Avançadado:</strong>RS:31,99</li>
-                          <li><strong>Avançado:</strong>R$:44,99</li>
+                             <ul class="list">
+                            <li class="price">Básico: R$9,99</li>
+                            <li><strong>Médio:</strong> R$22,99</li>
+                            <li><strong>Médio-Avançadado:</strong>RS:31,99</li>
+                            <li><strong>Avançado:</strong>R$:44,99</li>
                         </ul>
                     </div>
                 </div>
@@ -529,35 +531,7 @@
                                 <div id="successSend" class="alert alert-success invisible">
                                     <strong>Muito bem!</strong>Sua mensagem foi enviada com sucesso.</div>
                                 <div id="errorSend" class="alert alert-error invisible">Houve um erro no envio do formulário.</div>
-                                <!-- TODO FAZER POST VIA AJAX
-                                  http://stackoverflow.com/questions/23967390/rails-flash-notice-via-ajax
-                                -->
-                                <script type="text/javascript"> -->
-                                //   $( function() {
-                                //     $("#contact-form").submit(function()
-                                //     {
-                                //       $.ajax(
-                                //       {
-                                //         type: "POST",
-                                //         url: "/comentario/", // url 404 !!!
-                                //         complete: function(data)
-                                //         {
-                                //           alert(notice);
-                                //           //recarrega a pagina ou apaga dados do form
-                                //           // variavel "notice" está (teoricamente) sendo setada pelo rails
-                                //           // var notice = "<%= flash[:notice] %>"
-                                //         },
-                                //         error: function(xhr)
-                                //         {
-                                //           alert(xhr.status);
-                                //         }
-                                //       });
-                                //       return false;
-                                //     });
-                                //   });
-                                </script>
-
-                                <form id="contact-form">
+                                <form id="contact-form" action="/comentario">
                                     <div class="control-group">
                                         <div class="controls">
                                             <input class="span12" type="text" id="name" name="web_comentario[nome]" placeholder="* Seu nome..." />
@@ -590,7 +564,8 @@
                     <div class="span9 center contact-info">
                         <p>Aberto das 08:00 às 19:00</p>
                         <p class="info-mail">Telefone: +55 (11) 4786-4888 </p>
-                        <p>Rua Pedro Parejo Rojas, 218 Taboão da Serra - SP</p>
+                        <p>Rua Pedro Parejo Rojas, 218
+Taboão da Serra - SP</p>
 
 
                         <div class="title">
@@ -614,7 +589,7 @@
         <!-- INÍCIO DO FOOTER -->
         <div class="footer">
             <p>&copy; 2015 Thelmar Project</p>
-            <p><a href="/login">Acesso ao sistema </a></p>
+            <a href="/login"><p>Acesso ao sistema</p></a>
         </div>
         <!-- FIM DO FOOTER -->
         <!-- BOTÃO DE SCROLL UP -->

@@ -263,7 +263,7 @@ Sand mail
                 $("#name").val('');
                 $("#email").val('');
                 $("#comment").val('');
-              }
+              },
               error: function(xhr)
               {
                 $('#errorSend').show();
