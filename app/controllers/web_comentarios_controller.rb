@@ -9,7 +9,7 @@ class WebComentariosController < ApplicationController
         if @web_comentario.save
           format.js { head :created }
         else
-          format.js { if @web_comentario.errros[:limite_de_comentario]
+          format.js { if @web_comentario.errors[:limite_de_comentario]
                         head :locked
                       else head 400 end }
         end
