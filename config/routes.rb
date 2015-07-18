@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get 'login', to: 'session#new'
     get 'logout', to: 'session#destroy'
     get 'app', to: 'app#index'
+    resources :event, except: [:edit, :new], controller: 'agendamentos'
   end
 
 

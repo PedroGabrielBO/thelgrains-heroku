@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'cancancan'
-
+gem 'fullcalendar-rails'
 # gem 'brazilian-rails'
 
 gem 'immigrant', group: :development

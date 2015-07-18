@@ -11,16 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627203328) do
+ActiveRecord::Schema.define(version: 20150718015151) do
 
   create_table "agendamentos", force: :cascade do |t|
-    t.integer  "user_id",    null: false
+    t.integer  "user_id",     null: false
     t.integer  "cliente_id"
-    t.text     "servico",    null: false
-    t.datetime "data",       null: false
     t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "title"
+    t.text     "description"
+    t.datetime "start"
+    t.datetime "end"
+    t.boolean  "all_day"
   end
 
   add_index "agendamentos", ["cliente_id"], name: "index_agendamentos_on_cliente_id"
