@@ -15,4 +15,9 @@ class WebBaseController < ApplicationController
     session[:id] == 'web'
   end
 
+  # TODO
+  def prevent_double_login
+    # session[:id] == nil ? session[:id] = nil : true
+  end
+
 end

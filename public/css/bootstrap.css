@@ -239,7 +239,7 @@ a {
 a:hover,
 a:focus {
 	color: #FFFFFF;
-	text-decoration: underline;
+	text-decoration: underline overline;
 }
 
 .img-rounded {
@@ -620,6 +620,8 @@ a:focus {
   margin-left: auto;
   *zoom: 1;
 }
+
+
 
 .container:before,
 .container:after {

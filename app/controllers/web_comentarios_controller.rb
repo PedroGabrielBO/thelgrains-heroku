@@ -1,5 +1,5 @@
 class WebComentariosController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+  # skip_before_filter :verify_authenticity_token
   after_filter { flash.discard if request.xhr? }
 
   def create
@@ -11,7 +11,7 @@ class WebComentariosController < ApplicationController
         else
           format.js { if @web_comentario.errors[:limite_de_comentario]
                         head :locked
-                      else head 400 end }
+                      else head status: 400 end }
         end
       end
     else

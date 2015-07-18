@@ -4,24 +4,22 @@ class Web::SessionController < WebBaseController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
-  if session[:id] == 'web' then redirect_to 'app#index' end
+    redirect_to app_path if session[:id] == 'web'
   end
 
   def create
-    if Rails.application.secrets.web_password == BCrypt::Password.create(params[:password])
+    # SEMPRE USE BCrypt
+    if BCrypt::Password.new(Rails.application.secrets.web_password.to_s) == params[:password]
       session[:id] = 'web'
-      flash.now[:notice] = 'Logado com sucesso!'
-      redirect_to '/app'
+      redirect_to app_path, notice: 'Logado com sucesso!'
     else
-      flash.now[:alert] = 'Senha incorreta!'
-      redirect_to action: :new
+      redirect_to login_path, alert: 'Senha incorreta!'
     end
   end
 
   def destroy
     session[:id] = nil
-    flash.now[:notice] = 'Sessão encerrada!'
-    redirect_to action: :new
+    redirect_to login_path, notice: 'Sessão encerrada!'
   end
 
   private

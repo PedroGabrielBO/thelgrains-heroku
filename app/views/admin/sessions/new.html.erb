@@ -1,11 +1,5 @@
 <h2>Log in</h2>
 
-<% if flash[:alert] %>
-  <%= flash[:alert] %>
-<% end %>
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
-<% end %>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :cpf %><br />
@@ -28,3 +22,4 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+  <%= link_to 'Voltar', login_path %>

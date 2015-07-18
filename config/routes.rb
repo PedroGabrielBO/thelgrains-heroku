@@ -3,19 +3,17 @@ Rails.application.routes.draw do
   post 'comentario', to: 'web_comentarios#create'
 
   namespace 'android' do
-    devise_for :users, path: '', controllers: { sessions: 'android/sessions' }
-    # devise_scope :users do
-    #   post 'login', to: 'sessions#create'
-    #   get 'login', to: 'sessions#new'
-    #   get 'logout', to: 'sessions#destroy'
-    # end
+    devise_for :users, path: '', controllers: { sessions: 'android/sessions' },
+    path_names: { sign_in: 'login', sign_out: 'logout' },
+    sign_out_via: [:delete, :post]
+    root 'sessions#new'
   end
 
   namespace 'admin' do
-    devise_for :users, path: '', controllers: { sessions: 'admin/sessions' }
-    # post 'login', to: 'sessions#create'
-    # get 'login', to: 'sessions#new'
-    # get 'logout', to: 'sessions#destroy'
+    devise_for :users, path: '', controllers: { sessions: 'admin/sessions' },
+    path_names: { sign_in: 'login', sign_out: 'logout' },
+    sign_out_via: [:delete, :get, :post]
+    root 'sessions#new'
     get 'app', to: 'app#index'
   end
 
