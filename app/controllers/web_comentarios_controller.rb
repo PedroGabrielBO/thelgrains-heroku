@@ -1,5 +1,5 @@
 class WebComentariosController < ApplicationController
-  # skip_before_filter :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token
   after_filter { flash.discard if request.xhr? }
 
   def create
