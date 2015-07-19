@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
 
+
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   post 'comentario', to: 'web_comentarios#create'
 
   namespace 'android' do
     devise_for :users, path: '', controllers: { sessions: 'android/sessions' },
     path_names: { sign_in: 'login', sign_out: 'logout' },
     sign_out_via: [:delete, :post]
+
     root 'sessions#new'
   end
 
+
   namespace 'admin' do
-    devise_for :users, path: '', controllers: { sessions: 'admin/sessions' },
-    path_names: { sign_in: 'login', sign_out: 'logout' },
-    sign_out_via: [:delete, :get, :post]
-    root 'sessions#new'
-    get 'app', to: 'app#index'
+    # devise_for :users,
+    #   path: '',
+    #   controllers: { sessions: 'admin/sessions' },
+    #   path_names: { sign_in: 'login', sign_out: 'logout' },
+    #   sign_out_via: [:delete, :get, :post]
   end
 
   scope module: 'web' do

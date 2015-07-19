@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :timeoutable, authentication_keys: [:cpf]
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :timeoutable, :rememberable, authentication_keys: [:cpf]
 
   has_one :funcionario, inverse_of: :user
   has_many :atendimentos

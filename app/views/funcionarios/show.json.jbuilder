@@ -1,1 +1,0 @@
-json.extract! @funcionario, :id, :cpf, :telefone_fixo, :celular_1, :celular_2, :email, :endereco, :endereco_numero, :cep, :endereco_complemento, :password_digest, :telefone_ramal, :nome, :created_at, :updated_at
