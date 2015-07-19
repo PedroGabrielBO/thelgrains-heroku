@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'cancancan'
 
 # gem 'brazilian-rails'
@@ -12,7 +14,7 @@ gem 'fullcalendar-rails'
 gem 'rails_12factor'
 gem 'mysql2'
 gem 'pg'
-
+gem 'puma'
 gem 'passenger'
 gem 'responders'
 gem 'activeadmin', github: 'activeadmin'
