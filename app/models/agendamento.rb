@@ -5,7 +5,7 @@ class Agendamento < ActiveRecord::Base
   # validates_presence_of :servico, :data
   validates_associated :user, :cliente
   # validates :servico, length: { minimum: 10 }
-  validate :date_not_before_now
+  # validate :date_not_before_now
 
   # state_machine initial: :aberto do
   # end
@@ -13,6 +13,7 @@ class Agendamento < ActiveRecord::Base
   private
 
   def date_not_before_now
-    errors.add(:data, 'a data/hora deve ser depois da data/hora atual') if data < DateTime.now
+    return true unless start > DateTime.now && all_day?
+    errors.add(:data, 'a data/hora deve ser depois da data/hora atual')
   end
 end
