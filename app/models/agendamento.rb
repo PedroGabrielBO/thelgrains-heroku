@@ -7,8 +7,8 @@ class Agendamento < ActiveRecord::Base
   validates :servico, length: { minimum: 10 }
   validate :date_not_before_now
 
-  state_machine initial: :aberto do
-  end
+  # state_machine initial: :aberto do
+  # end
 
   private
 
