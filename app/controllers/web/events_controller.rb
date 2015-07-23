@@ -1,5 +1,5 @@
 module Web
-  class AgendamentosController < ApplicationController
+  class EventsController < ApplicationController
     include Webable, Events
     skip_before_action :require_login
   end
