@@ -32,7 +32,7 @@ module Events
 
     respond_to do |format|
       if @event.save
-        format.json { render :show, status: :created, location: @event }
+        format.json { render 'events/show', status: :created }
       else
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
@@ -44,7 +44,7 @@ module Events
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.json { render :show, status: :ok, location: @event }
+        format.json { render 'events/show', status: :ok}
       else
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
