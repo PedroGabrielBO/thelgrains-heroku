@@ -68,6 +68,6 @@ module Events
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :start, :end, :all_day, :user, :cliente, :state)
+      params.require(:event).permit(:title, :description, :start, :end, :all_day, :user_id, :cliente_id, :state)
     end
 end
