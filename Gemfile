@@ -51,5 +51,5 @@ gem 'bootstrap-sass'
 gem 'puma'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'codeclimate-test-reporter', group: :test, require: nil
-gem 'pg', group: :development
-gem 'rails_12factor', group: :development
+gem 'pg'
+gem 'rails_12factor'
