@@ -1,7 +1,0 @@
-<h1>Login</h1>
-<%= form_tag ({controller: 'web/session', action: 'create'}) do %>
-  Senha: <%= password_field_tag(:password) %><br>
-  <%= submit_tag 'Login' %>
-<%end%>
-<%= link_to 'Voltar', '/' %>
-<%= link_to 'Administração', new_user_session_path %>
