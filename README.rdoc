@@ -1,4 +1,5 @@
-{<img src="https://codeclimate.com/github/HeartBreakOne/thelgrains-heroku/badges/gpa.svg" />}[https://codeclimate.com/github/HeartBreakOne/thelgrains-heroku]{<img src="https://travis-ci.org/HeartBreakOne/thelgrains-heroku.svg" alt="Build Status" />}[https://travis-ci.org/HeartBreakOne/thelgrains-heroku]
+{<img src="https://codeclimate.com/github/HeartBreakOne/thelgrains-heroku/badges/gpa.svg" />}[https://codeclimate.com/github/HeartBreakOne/thelgrains-heroku]
+{<img src="https://travis-ci.org/HeartBreakOne/thelgrains-heroku.svg" alt="Build Status" />}[https://travis-ci.org/HeartBreakOne/thelgrains-heroku]
 == README
 
 This README would normally document whatever steps are necessary to get the
