@@ -62,3 +62,4 @@ module Admin
     params[:categoria]
   end
 end
+end
