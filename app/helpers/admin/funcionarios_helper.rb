@@ -1,0 +1,2 @@
+module Admin::FuncionariosHelper
+end

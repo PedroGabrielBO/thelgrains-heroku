@@ -2,7 +2,8 @@ module Webable
   extend ActiveSupport::Concern
 
   included do
-    respond_to :html
+    clear_respond_to
+    respond_to :html, :json
     before_action :require_login
   end
 

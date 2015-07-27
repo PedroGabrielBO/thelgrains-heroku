@@ -3,10 +3,10 @@ class CreateAgendamentos < ActiveRecord::Migration
     create_table :agendamentos do |t|
       t.references :user, index: true, null: false
       t.references :cliente, index: true
-      t.text :servico, null: false
-      t.datetime :data, null: false
+      t.text :servico
+      t.datetime :data
       t.string :state
-      
+
       t.timestamps null: false
     end
     add_foreign_key :agendamentos, :users

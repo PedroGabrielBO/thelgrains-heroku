@@ -3,8 +3,8 @@ class CreateEvents < ActiveRecord::Migration
     change_table :agendamentos do |t|
       t.string :title
       t.text :description
-      t.datetime :start
-      t.datetime :end
+      t.datetime :start_time
+      t.datetime :end_time
       t.boolean :all_day
       t.remove :data
       t.remove :servico

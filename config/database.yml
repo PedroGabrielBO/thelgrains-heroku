@@ -21,8 +21,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: thelgrains
-  username: thelgrains
-  password: <%= ENV['TESTE_DATABASE_PASSWORD'] %>
+  <<: *default
+  database: db/production.sqlite3

@@ -11,22 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718232848) do
-
-  create_table "active_admin_comments", force: :cascade do |t|
-    t.string   "namespace"
-    t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+ActiveRecord::Schema.define(version: 20150718015151) do
 
   create_table "agendamentos", force: :cascade do |t|
     t.integer  "user_id",     null: false
@@ -36,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150718232848) do
     t.datetime "updated_at",  null: false
     t.string   "title"
     t.text     "description"
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.boolean  "all_day"
   end
 
@@ -50,13 +35,13 @@ ActiveRecord::Schema.define(version: 20150718232848) do
   end
 
   create_table "atendimentos", force: :cascade do |t|
-    t.integer  "servico_id",               null: false
-    t.integer  "user_id",                  null: false
+    t.integer  "servico_id", null: false
+    t.integer  "user_id",    null: false
     t.integer  "cliente_id"
-    t.float    "gasto_add",  default: 0.0
+    t.float    "gasto_add"
     t.string   "state"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "atendimentos", ["cliente_id"], name: "index_atendimentos_on_cliente_id"
@@ -64,17 +49,17 @@ ActiveRecord::Schema.define(version: 20150718232848) do
   add_index "atendimentos", ["user_id"], name: "index_atendimentos_on_user_id"
 
   create_table "categoria_servicos", force: :cascade do |t|
-    t.string   "nome",       null: false
+    t.string   "nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "clientes", force: :cascade do |t|
-    t.string   "nome",       null: false
-    t.string   "telefone",   null: false
+    t.string   "nome"
+    t.string   "telefone"
     t.string   "celular"
     t.string   "email"
-    t.string   "cpf"
+    t.string   "cpf",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,7 +69,7 @@ ActiveRecord::Schema.define(version: 20150718232848) do
 
   create_table "funcionarios", force: :cascade do |t|
     t.integer  "user_id",              null: false
-    t.string   "nome",                 null: false
+    t.string   "nome"
     t.string   "telefone"
     t.string   "celular"
     t.string   "endereco"
@@ -96,20 +81,20 @@ ActiveRecord::Schema.define(version: 20150718232848) do
   add_index "funcionarios", ["user_id"], name: "index_funcionarios_on_user_id"
 
   create_table "produtos", force: :cascade do |t|
-    t.string   "nome",                     null: false
-    t.float    "valor",      default: 0.0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "nome"
+    t.float    "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "servicos", force: :cascade do |t|
-    t.integer  "categoria_servico_id",               null: false
-    t.string   "nome",                               null: false
-    t.float    "valor",                default: 0.0
-    t.float    "taxa_principal",       default: 0.0
-    t.float    "taxa_secundaria",      default: 0.0
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.integer  "categoria_servico_id", null: false
+    t.string   "nome"
+    t.float    "valor"
+    t.float    "taxa_principal"
+    t.float    "taxa_secundaria"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   add_index "servicos", ["categoria_servico_id"], name: "index_servicos_on_categoria_servico_id"
@@ -125,9 +110,9 @@ ActiveRecord::Schema.define(version: 20150718232848) do
   add_index "users", ["cpf"], name: "index_users_on_cpf", unique: true
 
   create_table "web_comentarios", force: :cascade do |t|
-    t.string   "nome",       null: false
+    t.string   "nome"
     t.string   "email",      null: false
-    t.text     "comentario", null: false
+    t.text     "comentario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

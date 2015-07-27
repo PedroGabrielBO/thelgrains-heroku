@@ -1,33 +1,33 @@
 Rails.application.routes.draw do
 
-
-  devise_for :users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   post 'comentario', to: 'web_comentarios#create'
 
-  namespace 'android' do
-    devise_for :users, path: '', controllers: { sessions: 'android/sessions' },
-    path_names: { sign_in: 'login', sign_out: 'logout' },
-    sign_out_via: [:delete, :post]
-
-    root 'sessions#new'
+  namespace 'api' do
+    devise_for :users, path: '', controllers: { sessions: 'api/sessions' },
+                       path_names: { sign_in: 'login', sign_out: 'logout' },
+                       sign_out_via: :delete
   end
 
 
   namespace 'admin' do
-    # devise_for :users,
-    #   path: '',
-    #   controllers: { sessions: 'admin/sessions' },
-    #   path_names: { sign_in: 'login', sign_out: 'logout' },
-    #   sign_out_via: [:delete, :get, :post]
+    devise_for :users, path: '', controllers: { sessions: 'admin/sessions' },
+                       path_names: { sign_in: 'login', sign_out: 'logout' },
+                       sign_out_via: [:delete, :get, :post]
+    root to: redirect('admin/dashboard')
+    get 'dashboard', to: 'app#index'
+    resources :clientes, :agendamentos, :produtos, :web_comentarios
+    # resources :atendimentos # TODO, ajudantes
+    # resources :servicos # TODO, rever rotas (GET edit e new via AJAX)(neasted)
+    # resources :categoria_servicos # TODO, rever rotas ( GET edit e new via AJAX)
+    # resources :users # TODO, neasted com funcionario
   end
 
   scope module: 'web' do
-    post 'login', to: 'session#create'
-    get 'login', to: 'session#new'
-    get 'logout', to: 'session#destroy'
+    post 'login', to: 'sessions#create'
+    get 'login', to: 'sessions#new'
+    get 'logout', to: 'sessions#destroy'
     get 'app', to: 'app#index'
-    resources :event, except: [:edit, :new]
+    resources :agendamentos, except: [:edit, :new]
   end
 
 

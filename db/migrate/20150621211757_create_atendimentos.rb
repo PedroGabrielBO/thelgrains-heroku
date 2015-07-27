@@ -4,9 +4,9 @@ class CreateAtendimentos < ActiveRecord::Migration
       t.references :servico, index: true, null: false
       t.references :user, index: true, null: false
       t.references :cliente, index: true
-      t.float :gasto_add, default: 0.0
+      t.float :gasto_add
       t.string :state
-      
+
       t.timestamps null: false
     end
     add_foreign_key :atendimentos, :servicos

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Agendamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_agendamentos.each do |admin_agendamento| %>
+      <tr>
+        <td><%= link_to 'Show', admin_agendamento %></td>
+        <td><%= link_to 'Edit', edit_admin_agendamento_path(admin_agendamento) %></td>
+        <td><%= link_to 'Destroy', admin_agendamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Agendamento', new_admin_agendamento_path %>

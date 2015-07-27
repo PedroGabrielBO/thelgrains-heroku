@@ -7,8 +7,8 @@ class WebComentario < ActiveRecord::Base
 
   def limite_de_comentario
     # TODO, query de verificacao de limite de WebComentarios (parametros de configuracao)
-    n = 2 # quantidade limite de comentarios (exclusive)
-    t = 10 # tempo em minutos (exclusive)
+    n = Rails.configuration.comentarios.limite_n # quantidade limite de comentarios (exclusive)
+    t = Rails.configuration.comentarios.tempo_min # tempo em minutos (exclusive)
     query = WebComentario.where('updated_at > ? AND email = ?', t.minutes.ago, email) # :updated_at > t.minutes.ago, email: email
     puts(query.size)
     return true if query.size < n

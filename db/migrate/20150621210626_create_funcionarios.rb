@@ -2,7 +2,7 @@ class CreateFuncionarios < ActiveRecord::Migration
   def up
     create_table :funcionarios do |t|
       t.references :user, index: true, null: false
-      t.string :nome, null: false
+      t.string :nome
       t.string :telefone
       t.string :celular
       t.string :endereco

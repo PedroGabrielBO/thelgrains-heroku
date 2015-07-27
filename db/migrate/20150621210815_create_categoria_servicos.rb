@@ -1,7 +1,7 @@
 class CreateCategoriaServicos < ActiveRecord::Migration
   def up
     create_table :categoria_servicos do |t|
-      t.string :nome, null: false
+      t.string :nome
 
       t.timestamps null: false
     end
