@@ -9,7 +9,7 @@ class Atendimento < ActiveRecord::Base
   validates_associated :user, :cliente, :servico
   validates_numericality_of :gasto_add, allow_nil: true
 
-  state_machine initial: :aberto do
-  end
+  # state_machine initial: :aberto do
+  # end
 
 end
